@@ -1,0 +1,12 @@
+name: ANSI SQL99
+headline: DDL, DML, DQL
+courses:
+    - name: 'SQL: DDL/DML'
+      url: 'https://ru.hexlet.io/courses/postgresql-ddl'
+    - name: 'SQL: DQL'
+      url: 'https://ru.hexlet.io/courses/sql-dql'
+description: |
+    Самые популярные базы данных сегодня это реляционные базы данных. И работа с ними это настолько базовый навык, что в вакансиях обычно даже не пишут об этом. К счастью, несмотря на наличие разных баз, существует общий стандарт ANSI SQL. Зная его, будет не сложно переключаться между разными базами.
+goal: Научиться создавать базу данных и таблицы. Разобраться со способами извлечения данных из них.
+labels:
+    fundamental: true

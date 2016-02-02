@@ -1,0 +1,40 @@
+-
+    - name: architecture-of-computers
+
+-
+    - name: bash-the-basics
+    - name: linux-users
+    - name: linux-processes
+
+-
+    - name: ruby-the-basics-of-programming
+    - name: ruby-structures
+    - name: ruby-the-functional-way
+
+-
+    - name: ruby-testing
+    - name: git
+    # - name: ruby-algorithms
+
+-
+    - name: ruby-oop
+    - name: ruby-oop-principles
+    - name: ruby-patterns
+
+-
+    - name: ruby-metaprogramming
+    # - name: ruby-io
+    - name: sql
+
+-
+    - name: http
+    - name: regular-expressions
+
+-
+    - name: ruby-rack
+    - name: ruby-sinatra
+    - name: ruby-rails
+
+-
+    # - name: web-servers
+    - name: web-security

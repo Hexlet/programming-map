@@ -1,0 +1,10 @@
+name: 'PHP: микрофреймворки (SLIM)'
+headline: Middleware, routing, templating
+description: В настоящее время очень популярны микрофреймворки. Знакомство с ними помогает хорошо понять концепции используемые в современных MVC фреймворках, а так же служит хорошим примером того как можно организовывать код в веб-приложениях.
+goal: Познакомиться с понятием и реализацией роутинга, шаблонизации.
+
+documentation: 'http://docs.slimframework.com/'
+
+# courses:
+#     - name: 'Основы HTTP'
+#       url: 'https://ru.hexlet.io/courses/http_protocol'

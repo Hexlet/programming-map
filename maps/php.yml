@@ -1,0 +1,49 @@
+-
+    - name: architecture-of-computers
+
+-
+    - name: bash-the-basics
+    - name: linux-users
+    - name: linux-processes
+
+-
+    - name: php-the-basics-of-programming
+    - name: php-the-functional-way
+
+-
+    - name: php-the-imperative-way
+    - name: php-algorithms
+
+-
+    - name: html
+    - name: css
+
+-
+    - name: git
+    - name: http
+    - name: regular-expressions
+
+-
+    - name: php-oop
+    - name: php-oop-principles
+    - name: php-patterns
+
+-
+    - name: sql
+    - name: database-design
+
+-
+    - name: php-pdo
+    - name: php-io
+
+-
+    - name: php-testing
+
+-
+    - name: php-web
+    - name: php-slim
+
+-
+    - name: web-servers
+    - name: web-security
+    - name: php-deploy

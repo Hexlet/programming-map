@@ -1,0 +1,60 @@
+{
+  "name": "programming-map",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hexlet/programming-map.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hexlet/programming-map/issues"
+  },
+  "homepage": "https://github.com/Hexlet/programming-map#readme",
+  "dependencies": {
+    "bootstrap": "github:twbs/bootstrap#v4.0.0-alpha.2",
+    "bower": "*",
+    "csswring": "*",
+    "debug": "*",
+    "express": "*",
+    "express-mung": "*",
+    "gulp": "*",
+    "gulp-util": "*",
+    "highlight.js": "*",
+    "holderjs": "*",
+    "i18n-2": "github:jeresig/i18n-node-2#master",
+    "jade": "*",
+    "jquery": "*",
+    "js-yaml": "*",
+    "lodash": "*",
+    "marked": "*",
+    "mincer": "*",
+    "morgan": "*",
+    "node-sass": "*",
+    "rollbar": "*",
+    "rollbar-browser": "*",
+    "social-likes": "^3.1.0",
+    "tether": "*",
+    "uglify-js": "*"
+  },
+  "devDependencies": {
+    "babel-cli": "*",
+    "nodemon": "*",
+    "postcss": "*",
+    "precss": "*",
+    "autoprefixer": "*",
+    "babel-core": "*",
+    "gulp-babel": "*",
+    "gulp-nodemon": "*",
+    "gulp-eslint": "*",
+    "babel-plugin-typecheck": "*",
+    "babel-plugin-syntax-flow": "*",
+    "babel-plugin-transform-flow-strip-types": "*",
+    "babel-preset-es2015": "*"
+  }
+}

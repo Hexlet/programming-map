@@ -1,0 +1,62 @@
+- hosts: all
+  gather_facts: no
+
+  vars_files:
+    - secret.yml
+  vars_prompt:
+    - name: "pm_image_tag"
+      prompt: "Programming Map image tag"
+      private: no
+
+  tasks:
+
+  - set_fact:
+      programming_map_image_tag: "{{ pm_image_tag }}"
+
+  - local_action:
+      module: slack
+      domain: hexlet.slack.com
+      token: "{{ slack_token }}"
+      msg: "Programming Map deploy started by {{ ansible_ssh_user }}: {{ deploy_env }}:{{ programming_map_image_tag }}"
+      channel: "#operation"
+      username: "{{ ansible_ssh_user }}"
+    run_once: yes
+
+- hosts: webservers
+  gather_facts: no
+  tasks:
+    - shell: docker pull {{ docker_hub_repo }}:{{ programming_map_image_tag }}
+      become: yes
+      become_user: '{{ run_user }}'
+
+    - name: update hexlet version
+      become: yes
+      lineinfile:
+        regexp: "MAP_VERSION"
+        line: "MAP_VERSION={{ programming_map_image_tag }}"
+        dest: /etc/environment
+        backup: yes
+        state: present
+
+    - service: name=programming-map state=restarted
+      become: yes
+      tags: [activejob, app]
+
+- hosts: localhost
+  gather_facts: no
+  tasks:
+
+  - name: "Send deploy hook to Rollbar"
+    local_action: shell curl https://api.rollbar.com/api/1/deploy/ \
+      -F access_token={{rollbar_backend_token}} \
+      -F environment={{deploy_env}} \
+      -F local_username={{ ansible_ssh_user }} \
+      -F revision=`git log -n 1 --pretty=format:"%H"`
+
+  - local_action:
+      module: slack
+      domain: hexlet.slack.com
+      token: "{{ slack_token }}"
+      msg: "Programming Map deploy completed ({{ deploy_env }})"
+      channel: "#operation"
+      username: "{{ ansible_ssh_user }}"

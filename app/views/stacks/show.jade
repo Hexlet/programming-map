@@ -1,0 +1,126 @@
+extends ../layout.jade
+
+block content
+  mixin point(name, point)
+    .card
+      .card-block
+        .text-xs-center
+          h6.card-title
+            a(href="#" data-toggle="modal" data-target=("#" + name))= point.name
+          p.card-text.text-muted.small
+            = point.headline
+
+        .text-right
+          if point.labels
+            if point.labels["fundamental"]
+              span.label.label-info фундаментальный
+              | &nbsp;
+
+          if point.courses
+            span.label.label-success
+              | курсов:&nbsp;
+              = point.courses.length
+
+    .modal.fade.bs-example-modal-lg(id=name tabindex=-1)
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-header
+            button.close(type="button" data-dismiss="modal")
+              span &times;
+            h4.modal-title= point.name
+          .modal-body
+            .container
+
+              - var goalTarget = "targetGoal" + name
+              - var bookTarget = "targetBook" + name
+
+              .row
+                .col-md-3
+                  ul.nav.nav-pills.nav-stacked
+                    li.nav-item
+                      a.nav-link.active(href=("#" + goalTarget) data-toggle="pill") Основное
+                    if point.book
+                      li.nav-item
+                        a.nav-link(href=("#" + bookTarget) data-toggle="pill") Книга
+                .col-md-9
+                  .tab-content
+                    .tab-pane.active(id=goalTarget)
+                      dl
+                        if point.description
+                          dt.col-sm-3 Описание
+                          dd.col-sm-9
+                            = point.description
+                        dt.col-sm-3 Цель
+                        dd.col-sm-9
+                          = point.goal
+
+                        if point.documentation
+                          dt.col-sm-3 Документация
+                          dd.col-sm-9
+                            a(target="_blank" href=point.documentation)= point.documentation
+
+
+                        dt.col-sm-3 Курсы
+                        dd.col-sm-9
+                          if point.courses
+                            ol
+                              each course in point.courses
+                                li
+                                  a(target="_blank" href=hexletCourseLink(course.url))= course.name
+                          else
+                            | В процессе разработки
+
+                        // dt.col-sm-3 Описание
+                        // dd.col-sm-9
+                        //   != marked(point.description)
+
+
+                    if point.book
+                      .tab-pane(id=bookTarget)
+                        .media
+                          if point.book.picture
+                            a.media-left(target="_blank" href=ozonPartnerLink(point.book.link))
+                              img.media-object.img-thumbnail(width="150px" src="/images/books/" + point.book.picture)
+                          .media-body
+                            h4.media-heading
+                              a(target="_blank" href=ozonPartnerLink(point.book.link))= point.book.name
+                            p= "Автор: " + point.book.author
+                            if point.book.reading
+                              != marked(point.book.reading)
+
+  .jumbotron
+    h1.display-3= __("stacks.show." + name + ".name")
+    .lead= __("stacks.show." + name + ".description")
+
+  each level in map
+    .row
+      - var count = level.length
+      case count
+        when 1
+          - var p = level[0]
+          .col-md-4 &nbsp;
+          .col-md-4
+            +point(p.name, points[p.name])
+          .col-md-4 &nbsp;
+
+        when 2
+          - var p1 = level[0]
+          - var p2 = level[1]
+          .col-md-4.col-md-offset-2
+            +point(p1.name, _.fetch(points, p1.name))
+          .col-md-4
+            +point(p2.name, _.fetch(points, p2.name))
+
+        default
+          each p in level
+            .col-md-4
+              +point(p.name, _.fetch(points, p.name))
+    br
+    .text-muted.text-xs-center
+      | &darr;
+
+    br
+
+  .text-muted.text-xs-center
+    if startCourseUrl !== " "
+      a.btn.btn-success.btn-lg(href=startCourseUrl)= __("stacks.show.start")

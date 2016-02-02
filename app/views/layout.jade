@@ -1,0 +1,93 @@
+doctype html
+html(lang="en")
+  head
+    title!= title
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    link(type="text/css" rel="stylesheet" href=asset("application.css"))
+    link(rel="icon" type="image/png" sizes="192x192"  href="/images/icons/favicon_192x192.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon_32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon_16x16.png")
+    link(rel="manifest" href="/images/icons/manifest.json")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="msapplication-TileImage" content="/images/icons/favicon_144x144.png")
+    meta(name="theme-color" content="#ffffff")
+    meta(description=metaDescription)
+    meta(property="og:title" content=title)
+    meta(property="og:image" content="/images/og_cover.png")
+    meta(property="og:description" content=metaDescription)
+    meta(name="twitter:site" content="@HexletHQ")
+    meta(name="twitter:image" content="/images/og_cover.png")
+    meta(name="twitter:description" content=metaDescription)
+
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-1360700-59', 'auto');
+      ga('send', 'pageview');
+
+  body
+    nav.navbar.navbar-light.bg-faded
+      a.navbar-brand(href="/") Карта
+      ul.nav.navbar-nav
+        li.nav-item
+          a.nav-link(href="/pages/start") Начало
+        li.nav-item
+          a.nav-link(href="/pages/books") Книги
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(data-toggle='dropdown' href='#') Статьи
+          .dropdown-menu
+            a.dropdown-item(href="/pages/languages") Языки программирования
+            a.dropdown-item(href="/pages/development") Рабочее окружение
+            a.dropdown-item(href="/pages/hosting") Хостинг
+            a.dropdown-item(href="/pages/configuration-management") Управление конфигурацией
+            a.dropdown-item(href="/pages/deploy") Деплой
+            a.dropdown-item(href="/pages/operation") Эксплуатация
+        li.nav-item
+          a.nav-link(href="https://github.com/Hexlet/webinars/wiki", target='_blank') Вебинары
+        li.nav-item
+          a.nav-link(href="http://slack-ru.hexlet.io/", target='_blank') Чат
+        li.nav-item
+          a.nav-link(href="/pages/about") О проекте
+
+    .container.m-t-2
+
+      if header
+        h3= header
+      block content
+
+    footer.footer.p-y-2.m-t-1.text-muted
+      .container
+        .row
+          .col-md-3
+            p.h4
+              a(href="https://hexlet.io/?utm_source=progmap&utm_medium=web&utm_campaign=progmap_footer") Hexlet.io
+              | &nbsp;&copy; 2016
+            p
+              small
+                a(href="mailto:support@hexlet.io") support@hexlet.io
+          .col-md-3
+          .col-md-3
+            ul.nav
+              li.nav-item
+                a.nav-link(href="http://slack-ru.hexlet.io/") slack
+              li.nav-item
+                a.nav-link(href="http://twitter.com/HexletHQ") twitter
+              li.nav-item
+                a.nav-link(href="https://www.facebook.com/Hexlet") facebook
+              li.nav-item
+                a.nav-link(href="https://vk.com/hexlet") vkontakte
+          .col-md-3
+            ul.list-unstyled
+              li.nav-item
+                a.nav-link(href="https://www.youtube.com/user/HexletUniversity") youtube
+              li.nav-item
+                a.nav-link(href="https://plus.google.com/b/108226937214888198279/+HexletOrg/posts") google+
+              li.nav-item
+                a.nav-link(href="https://www.linkedin.com/company/hexlet") linkedin
+
+    script(src=asset("application.js"))

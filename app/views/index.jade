@@ -1,0 +1,45 @@
+extends layout.jade
+
+block content
+  mixin stack(title, path)
+    .card
+      img.card-img-top.img-fluid.center-block(src=assetCoverPath(title), alt=title)
+      // .card-block.text-center
+      //   p.card-text
+      //     block
+
+  mixin pending-stack(title)
+    .card
+      img.card-img-top.img-fluid.center-block(src=assetCoverPath(title), alt=title)
+      .card-block.text-center
+        p.card-text
+          // block
+        .text-muted Coming soon
+
+  .jumbotron.text-center
+    h1.display-3= __("welcome.index.title")
+    .lead= __("welcome.index.meta.description")
+    hr
+    .social-likes(data-title=__("welcome.index.title") + ': ' + __("welcome.index.social_description"))
+      .facebook Facebook
+      .twitter(data-via='hexlethq', data-related='hexlethq' + ':' + __("welcome.index.twitter_description")) Twitter
+      .vkontakte Vkontakte
+
+  .card-deck
+    +stack("PHP", "/stacks/php")
+    +stack("Rails", "/stacks/ruby")
+    +stack("Static Frontend", "/stacks/static-frontend")
+      = "html5, css3"
+
+  br
+
+  .card-deck
+    +pending-stack("Dynamic Frontend")
+      = "javascript, DOM, jquery, postcss"
+    +pending-stack("Python")
+    +pending-stack("Node")
+
+  br
+
+  .block-xs-center
+      a.btn.btn-block.btn-lg.btn-primary-outline(href="/pages/start") Куда идти?

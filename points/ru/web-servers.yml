@@ -1,0 +1,8 @@
+name: Устройство веб-серверов и способы взаимодействия
+headline: CGI, FastCGI, event Loop
+# documentation: lala
+goal: Познакомиться с типами веб серверов, и тем как они взаимодействуют с приложением.
+# description: ehu
+# courses:
+#     - name: 'Основы HTTP'
+#       url: 'https://ru.hexlet.io/courses/http_protocol'

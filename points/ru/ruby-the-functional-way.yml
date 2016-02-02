@@ -1,0 +1,8 @@
+name: 'Ruby: функциональное программирование'
+headline: Map, filter, reduce
+goal: Научиться писать в функциональном стиле на ruby
+
+# courses:
+#     - name: 'Основы HTTP'
+#       url: 'https://ru.hexlet.io/courses/http_protocol'
+

@@ -1,0 +1,8 @@
+name: 'PHP: консольные утилиты'
+headline: Fork, Exec
+# documentation: 'http://php.net/manual/ru/language.oop5.php'
+# description: Научиться
+goal: Научиться создавать программы, работающие из командной строки.
+# courses:
+#     - name: 'Основы HTTP'
+#       url: 'https://ru.hexlet.io/courses/http_protocol'

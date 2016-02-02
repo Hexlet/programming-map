@@ -1,0 +1,8 @@
+name: 'PHP: ввод/вывод'
+headline: Файлы, сокеты
+# documentation: http://php.net/manual/ru/language.oop5.php
+goal: Научиться работать с файлами, управлять файловой структурой.
+
+courses:
+  - name: 'PHP: Ввод и вывод'
+    url: 'https://ru.hexlet.io/courses/php-io'

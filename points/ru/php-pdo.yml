@@ -1,0 +1,8 @@
+name: 'PHP: работа с базой данных'
+headline: PDO, адаптеры, курсоры
+documentation: 'http://php.net/manual/ru/book.pdo.php'
+goal: Научиться соединяться с базой данных, выполнять запросы из php кода и работать с их результатами.
+
+courses:
+  - name: 'PHP PDO: Работа с базой данных'
+    url: 'https://ru.hexlet.io/courses/php-pdo'

@@ -1,0 +1,5 @@
+name: 'Ruby: ООП'
+headline: Классы, инкапсуляция, миксины
+# documentation: http://php.net/manual/ru/language.oop5.php
+goal: Познакомиться с объектно-ориентироваными возможностями языка Ruby. Научиться использовать их по назначению.
+

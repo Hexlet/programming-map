@@ -1,0 +1,5 @@
+run_user: map_production
+server_name: map.hexlet.io
+server_host: 0.0.0.0
+server_port: 8080
+docker_hub_repo: "hexlet/programming-map-autobuild"

@@ -1,0 +1,29 @@
+- hosts: bastions
+  gather_facts: no
+
+  vars:
+    clone_dir: /var/tmp/programming-map
+
+  vars_prompt:
+    - name: "programming_map_image_tag"
+      prompt: "Programming map image tag"
+      private: no
+
+  tasks:
+    - git:
+        repo: git@github.com:Hexlet/programming-map.git
+        dest: '{{ clone_dir }}'
+        accept_hostkey: yes
+        key_file: /home/{{ run_user }}/.ssh/map_deploy_rsa
+        version: '{{ programming_map_image_tag }}'
+      become: yes
+      become_user: '{{ run_user }}'
+
+    - shell: 'cd {{ clone_dir }} && docker build -t hexlet/programming-map:{{ programming_map_image_tag }} .'
+      become: yes
+      become_user: '{{ run_user }}'
+
+    - shell: 'docker push hexlet/programming-map:{{ programming_map_image_tag }}'
+      become: yes
+      become_user: '{{ run_user }}'
+

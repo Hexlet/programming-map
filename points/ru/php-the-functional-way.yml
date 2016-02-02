@@ -1,0 +1,7 @@
+name: 'PHP: функциональное программирование'
+headline: Map, filter, reduce
+goal: Научиться использовать PHP-функции, позволяющие использовать функциональные подходы при разработке программ.
+
+courses:
+    - name: 'PHP: функциональное программирование'
+      url: 'https://ru.hexlet.io/courses/php5-functional'

@@ -1,0 +1,11 @@
+extends ../layout.jade
+
+block content
+  != marked(page.description)
+
+  hr
+  .text-xs-center
+    .social-likes
+      .facebook Facebook
+      .twitter(data-via='hexlethq') Twitter
+      .vkontakte Vkontakte

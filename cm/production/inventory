@@ -1,0 +1,5 @@
+[bastions]
+production-bastion
+
+[webservers]
+map.hexlet.internal

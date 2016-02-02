@@ -1,0 +1,10 @@
+.DS_Store
+
+node_modules
+bower_components
+
+*.log
+public/main.js
+public/assets
+app/cache
+.nodemon-find-ref

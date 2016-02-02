@@ -1,0 +1,13 @@
+name: Протокол HTTP
+headline: Заголовки, chunked, формы
+documentation: 'http://tools.ietf.org/html/rfc7231'
+description: |
+    Протокол прикладного уровня передачи данных.
+    HTTP повсеместно используется во всемирной паутине для получения информации с веб-сайтов.
+
+goal: |
+    Понять, как браузер взаимодействует с веб-сервером. Научиться работать с http через telnet.
+    Разобратья с основными заголовками.
+courses:
+    - name: 'Основы HTTP'
+      url: 'https://ru.hexlet.io/courses/http_protocol'

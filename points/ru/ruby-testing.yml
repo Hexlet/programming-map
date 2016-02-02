@@ -1,0 +1,12 @@
+name: 'Ruby: Тестирование'
+headline: Mock, Code Coverage, Minitest
+description: |
+    Тестирование программного обеспечения является неотъемлемой частью процесса разработки.
+    Умение писать тесты это важный навык для каждого профессионального разработчика.
+goal: Познакомиться с видами тестирования. Научиться писать unit-тесты.
+
+documentation: 'https://github.com/seattlerb/minitest'
+
+# courses:
+#     - name: 'Основы HTTP'
+#       url: 'https://ru.hexlet.io/courses/http_protocol'

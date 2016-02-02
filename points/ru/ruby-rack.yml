@@ -1,0 +1,4 @@
+name: 'Ruby: Rack'
+headline: Middleware, Chain
+description: Rack это унифицированный способ построения веб-приложений.
+goal: Познакомиться с концепцией. Научиться использовать rack.
