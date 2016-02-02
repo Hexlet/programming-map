@@ -3,7 +3,8 @@ extends layout.jade
 block content
   mixin stack(title, path)
     .card
-      img.card-img-top.img-fluid.center-block(src=assetCoverPath(title), alt=title)
+      a(href=path)
+        img.card-img-top.img-fluid.center-block(src=assetCoverPath(title), alt=title)
       // .card-block.text-center
       //   p.card-text
       //     block
