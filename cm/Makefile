@@ -6,4 +6,4 @@ build:
 	# ansible-playbook build.yml -i production -u $(U) -vv
 
 deploy:
-	ansible-playbook deploy.yml -i production -u $(U) -vv --ask-vault-pass
+	ansible-playbook deploy.yml -i production -u $(U) -vv --vault-password-file ~/.ansible-vault/programming-map
