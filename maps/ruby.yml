@@ -2,9 +2,8 @@
     - name: architecture-of-computers
 
 -
-    - name: bash-the-basics
-    - name: linux-users
-    - name: linux-processes
+    - name: bash-basics
+    - name: linux
 
 -
     - name: ruby-the-basics-of-programming

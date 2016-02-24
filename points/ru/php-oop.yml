@@ -4,4 +4,4 @@ documentation: http://php.net/manual/ru/language.oop5.php
 goal: Познакомиться с объектно-ориентироваными возможностями языка PHP. Научиться использовать их по назначению.
 courses:
     - name: 'PHP: Основы ООП'
-      url: 'https://ru.hexlet.io/courses/php5-oop'
+      url: 'https://ru.hexlet.io/courses/php-oop'

@@ -6,5 +6,5 @@ description: |
 goal: Познакомиться с видами тестирования. Научиться писать unit тесты.
 documentation: 'https://phpunit.de/'
 courses:
-    - name: 'PHP5: Автоматическое Тестирование'
-      url: 'https://ru.hexlet.io/courses/php5-testing'
+    - name: 'PHP: Автоматическое Тестирование'
+      url: 'https://ru.hexlet.io/courses/php-testing'

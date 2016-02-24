@@ -7,4 +7,4 @@ labels:
     fundamental: true
 courses:
     - name: 'PHP: Алгоритмы'
-      url: 'https://ru.hexlet.io/courses/php5-algorithms'
+      url: 'https://ru.hexlet.io/courses/php-algorithms'

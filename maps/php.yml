@@ -2,16 +2,12 @@
     - name: architecture-of-computers
 
 -
-    - name: bash-the-basics
-    - name: linux-users
-    - name: linux-processes
+    - name: bash-basics
+    - name: linux
 
 -
-    - name: php-the-basics-of-programming
-    - name: php-the-functional-way
-
--
-    - name: php-the-imperative-way
+    - name: php-basics
+    - name: php-fp
     - name: php-algorithms
 
 -
@@ -25,8 +21,7 @@
 
 -
     - name: php-oop
-    - name: php-oop-principles
-    - name: php-patterns
+    - name: php-testing
 
 -
     - name: sql
@@ -35,9 +30,6 @@
 -
     - name: php-pdo
     - name: php-io
-
--
-    - name: php-testing
 
 -
     - name: php-web
