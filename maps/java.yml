@@ -20,14 +20,14 @@
 -
     - name: design-patterns
     - name: collections
-	- name: concurrency
-	- name: java-algorithms
+    - name: concurrency
+    - name: java-algorithms
 
 -
     - name: java-fp
     - name: java-io
-	- name: java-build-systems
-	- name: java-testing
+    - name: java-build-systems
+    - name: java-testing
 
 -
     - name: java-network
