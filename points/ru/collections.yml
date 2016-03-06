@@ -1,0 +1,9 @@
+name: Java: Структуры данных
+headline: ключевые, слова
+description: |
+    Краткое описание
+goal: |
+   Познакомить с основными структурами данных в программировании и разобраться в их реализации в Java.
+courses:
+    - name: 'Java: Структуры данных'
+      url: 'https://ru.hexlet.io/courses/collections'
