@@ -1,5 +1,5 @@
-name: Байт-код Java
-headline: инструкции, код, виртуальная машина
+name: Java ByteCode
+headline: bytecode, compilers, vm, virtual machine
 description: |
     Байт-код Java - набор инструкций, исполняемых виртуальной машиной Java. Байт-код Java создается, чаще всего, с помощью компиляторов языка программирования Java.
 goal: |
