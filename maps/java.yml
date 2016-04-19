@@ -1,0 +1,42 @@
+-
+    - name: prog-life
+
+-
+    - name: bash-basics
+ 
+-
+    - name: git
+
+-
+    - name: java-101
+
+-
+    - name: bytecode
+
+-
+    - name: generics
+    - name: garbage-collection
+
+-
+    - name: design-patterns
+    - name: collections
+    - name: concurrency
+    - name: java-algorithms
+
+-
+    - name: java-fp
+    - name: java-io
+    - name: java-build-systems
+    - name: java-testing
+
+-
+    - name: java-network
+    - name: http
+
+-
+    - name: java-basic-cs-applications
+
+-
+    - name: continues
+    - name: sql
+
