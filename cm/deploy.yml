@@ -38,7 +38,11 @@
 
     - service: name=programming-map state=restarted
       become: yes
-      tags: [activejob, app]
+      tags: [app]
+
+    - service: name=nginx state=started
+      become: yes
+      tags: [app]
 
 - hosts: all
   gather_facts: no
