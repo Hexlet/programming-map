@@ -7,7 +7,7 @@ description: |
 
 goal: |
     Понять, как браузер взаимодействует с веб-сервером. Научиться работать с http через telnet.
-    Разобратья с основными заголовками.
+    Разобраться с основными заголовками.
 courses:
     - name: 'Основы HTTP'
       url: 'https://ru.hexlet.io/courses/http_protocol'
