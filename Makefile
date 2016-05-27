@@ -1,5 +1,8 @@
 all: install
 
+lock:
+	npm shrinkwrap
+
 build:
 	docker build -t programming-map .
 
