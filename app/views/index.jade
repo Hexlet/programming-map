@@ -10,12 +10,11 @@ block content
       //     block
 
   mixin pending-stack(title)
-    .card
+    .card.map-pending-stack-card
       img.card-img-top.img-fluid.center-block(src=assetCoverPath(title), alt=title)
       .card-block.text-center
-        p.card-text
-          // block
-        .text-muted Coming soon
+        p.card-text.text-xs-center.text-muted Coming soon
+
 
   .jumbotron.text-center
     h1.display-3= __("welcome.index.title")
@@ -31,6 +30,7 @@ block content
     +stack("Rails", "/stacks/ruby")
     +stack("Static Frontend", "/stacks/static-frontend")
       = "html5, css3"
+    +stack("Java", "/stacks/java")
 
   br
 

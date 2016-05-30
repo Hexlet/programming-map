@@ -14,6 +14,6 @@
   "stacks.show.static-frontend.description": "HTML5, CSS3, Flexbox",
   "stacks.show.static-frontend.startCourseUrl": " ",
   "stacks.show.java.name": "Стек Java",
-  "stacks.show.java.description": "Java - один из самых популярных языков в мире на сегодняшний день, что гарантирует интерес практически любой компании мира. Язык на котором написаны и пишут практически все самые высоконагруженные решения. Знания особенностей виртуальной машины Java открывают широкие просторы и других языков написанных для нее: Scala, Clojure, Kotlin, etc.",
+  "stacks.show.java.description": "Java - один из самых популярных языков в мире на сегодняшний день, что гарантирует интерес практически любой компании мира. Язык, на котором написаны и пишут практически все самые высоконагруженные решения. Знания особенностей виртуальной машины Java открывают широкие просторы в других языках, написанных для JVM: Scala, Clojure, Kotlin и др.",
   "stacks.show.java.startCourseUrl": "https://ru.hexlet.io/courses/java_101"
 }

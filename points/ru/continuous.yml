@@ -1,5 +1,5 @@
-name: Continues integration
-headline:  Continues integration, best practices, devops
+name: Continuous integration
+headline:  Continuous integration, best practices, devops
 description: |
     Курс посвящен практике разработки программного обеспечения, которая заключается в выполнении частых автоматизированных сборок проекта для скорейшего выявления и решения интеграционных проблем.
 goal: |

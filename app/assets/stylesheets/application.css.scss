@@ -16,3 +16,9 @@
 .footer a {
   color: #55595c;
 }
+
+.card.map-pending-stack-card {
+  filter: gray; /* IE6-9 */
+  filter: grayscale(0.9);
+  opacity: 0.75;
+}

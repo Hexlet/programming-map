@@ -3,7 +3,7 @@
 
 -
     - name: bash-basics
- 
+
 -
     - name: git
 
@@ -37,6 +37,5 @@
     - name: java-basic-cs-applications
 
 -
-    - name: continues
+    - name: continuous
     - name: sql
-
