@@ -2,4 +2,4 @@
 production-bastion
 
 [webservers]
-40.69.217.8
+map.northeurope.cloudapp.azure.com
