@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "babel-node": "babel-node",
+    "start": "DEBUG=app:* nodemon app/server.js --exec babel-node",
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +20,10 @@
   },
   "homepage": "https://github.com/Hexlet/programming-map#readme",
   "dependencies": {
-    "bootstrap": "github:twbs/bootstrap#v4.0.0-alpha.2",
+    "bootstrap": "v4.0.0-alpha.2",
+    "babel-plugin-syntax-flow": "*",
+    "babel-plugin-transform-flow-strip-types": "*",
+    "babel-plugin-typecheck": "*",
     "csswring": "*",
     "debug": "*",
     "express": "*",
@@ -26,8 +32,8 @@
     "gulp-util": "*",
     "highlight.js": "*",
     "holderjs": "*",
-    "i18n-2": "github:jeresig/i18n-node-2#master",
-    "jade": "*",
+    "i18n-2": "*",
+    "pug": "^2.0.0-alpha6",
     "jquery": "*",
     "js-yaml": "*",
     "lodash": "*",
@@ -39,9 +45,11 @@
     "rollbar-browser": "*",
     "social-likes": "^3.1.0",
     "tether": "*",
-    "uglify-js": "*"
+    "uglify-js": "*",
+    "querystring": "*"
   },
   "devDependencies": {
+    "babel-eslint": "*",
     "babel-cli": "*",
     "nodemon": "*",
     "postcss": "*",
@@ -51,9 +59,6 @@
     "gulp-babel": "*",
     "gulp-nodemon": "*",
     "gulp-eslint": "*",
-    "babel-plugin-typecheck": "*",
-    "babel-plugin-syntax-flow": "*",
-    "babel-plugin-transform-flow-strip-types": "*",
     "babel-preset-es2015": "*",
     "babel-preset-stage-0": "*"
   }

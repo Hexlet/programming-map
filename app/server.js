@@ -1,34 +1,36 @@
 /* @flow */
 
-var path = require('path');
+import path from 'path';
+import pug from 'pug';
+import express from 'express';
+import rollbar from 'rollbar';
+import morgan from 'morgan';
+import Mincer from 'mincer';
+import i18n from 'i18n-2';
+import _ from 'lodash';
+import debug from 'debug';
+import mung from 'express-mung';
 
-var express = require('express');
-var rollbar = require('rollbar');
-var morgan = require('morgan');
-var app = express();
-var Mincer = require('mincer');
-var i18n = require('i18n-2');
-var _ = require('lodash');
-var debug = require('debug')('http');
-var mung = require('express-mung');
+const log = debug('app:http');
+const app = express();
 
 _.mixin({
-  'fetch': function (object, property) {
-    var result = object[property];
+  fetch: (object, property) => {
+    const result = object[property];
     if (result === undefined) {
-      throw new Error("Property '" + property + "' is undefined");
+      throw new Error(`Property '${property}' is undefined`);
     }
     return result;
-  }
+  },
 });
 
 i18n.expressBind(app, {
   locales: ['ru', 'en'],
-  defaultLocale: 'ru'
+  defaultLocale: 'ru',
   // cookieName: "locale"
 });
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   // req.i18n.setLocaleFromQuery();
   // req.i18n.setLocaleFromCookie();
   req.i18n.setLocale('ru');
@@ -37,7 +39,7 @@ app.use(function (req, res, next) {
 
 Mincer.logger.use(console);
 
-var environment = new Mincer.Environment();
+let environment = new Mincer.Environment();
 environment.enable('source_maps');
 environment.enable('autoprefixer');
 environment.appendPath('app/assets/javascripts');
@@ -48,34 +50,34 @@ environment.appendPath('bower_components');
 app.use('/assets', Mincer.createServer(environment));
 app.use(rollbar.errorHandler(process.env.ROLLBAR_BACKEND_TOKEN));
 
-if (process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV === 'production') {
   environment.cache = new Mincer.FileStore(path.join(__dirname, 'cache'));
   environment.jsCompressor = 'uglify';
   environment.cssCompressor = 'csswring';
   environment = environment.index;
 }
 
-app.engine('jade', require('jade').__express);
+app.engine('pug', pug.__express);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use(morgan('combined'));
 
-var helpers = require('./helpers.js');
-app.locals = helpers({ environment: environment, _: _ });
+const helpers = require('./helpers.js');
+app.locals = helpers({ environment, _ });
 
-var routes = require('./routes.js');
+const routes = require('./routes.js');
 app.use('/', routes);
 
-app.use(mung.json(function (body) {
+app.use(mung.json((body) => {
   return body.replace(/href="(.*?hexlet\.io.*?)"/i, 'href="$1?utm=ehu"');
 }));
 
-var server = app.listen(8080, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+const server = app.listen(8080, () => {
+  const host = server.address().address;
+  const port = server.address().port;
 
-  debug('Example app listening at http://%s:%s', host, port);
+  log('Example app listening at http://%s:%s', host, port);
 });

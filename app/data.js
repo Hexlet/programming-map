@@ -1,25 +1,25 @@
-/* @flow */
+// @flow
 
-var yaml = require('js-yaml');
-var fs = require('fs');
+import yaml from 'js-yaml';
+import fs from 'fs';
 
-var data = function () {
-  var mapFiles = fs.readdirSync('maps');
-  var pagesFiles = fs.readdirSync('pages');
-  var pointLangs = fs.readdirSync('points');
-  // var doc = yaml.safeLoad(fs.readFileSync("/home/ixti/example.yml", "utf8"));
+const data = (): Object => {
+  const mapFiles = fs.readdirSync('maps');
+  const pagesFiles = fs.readdirSync('pages');
+  const pointLangs = fs.readdirSync('points');
+  // const doc = yaml.safeLoad(fs.readFileSync("/home/ixti/example.yml", "utf8"));
 
-  var maps = mapFiles.reduce(function (acc, value) {
-    var content = yaml.safeLoad(fs.readFileSync('maps/' + value, 'utf8'));
-    var stackName = value.split('.')[0];
+  const maps = mapFiles.reduce((acc, value) => {
+    const content = yaml.safeLoad(fs.readFileSync(`maps/${value}`, 'utf8'));
+    const stackName = value.split('.')[0];
     acc[stackName] = content;
     return acc;
   }, {});
 
-  var pages = pagesFiles.reduce(function (acc, value) {
-    var content = yaml.safeLoad(fs.readFileSync('pages/' + value, 'utf8'));
-    var params = value.split('.');
-    var lang = params[1];
+  const pages = pagesFiles.reduce((acc, value) => {
+    const content = yaml.safeLoad(fs.readFileSync(`pages/${value}`, 'utf8'));
+    const params = value.split('.');
+    const lang = params[1];
     if (acc[lang] === undefined) {
       acc[lang] = {};
     }
@@ -28,12 +28,12 @@ var data = function () {
     return acc;
   }, {});
 
-  var points = pointLangs.reduce(function (acc, lang) {
-    var langPointFiles = fs.readdirSync('points/' + lang);
+  const points = pointLangs.reduce((acc, lang) => {
+    const langPointFiles = fs.readdirSync(`points/${lang}`);
 
-    var langPoints = langPointFiles.reduce(function (acc, value) {
-      var content = yaml.safeLoad(fs.readFileSync('points/' + lang + '/' + value, 'utf8'));
-      var pointName = value.split('.')[0];
+    const langPoints = langPointFiles.reduce((acc, value) => {
+      const content = yaml.safeLoad(fs.readFileSync(`points/${lang}/${value}`, 'utf8'));
+      const pointName = value.split('.')[0];
       acc[pointName] = content;
       return acc;
     }, {});
@@ -42,7 +42,7 @@ var data = function () {
     return acc;
   }, {});
 
-  return { pages: pages, maps: maps, points: points };
+  return { pages, maps, points };
 };
 
-module.exports = data;
+export default data;

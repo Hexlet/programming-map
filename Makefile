@@ -13,19 +13,10 @@ build:
 # 		--include bower_components \
 # 		--output public/assets application.js application.css
 
-development:
-	./node_modules/gulp/bin/gulp.js development
-
 start:
-	node app/server.js
+	npm run start
 
 install:
 	npm install
 
-# build:
-# 	./node_modules/webpack/bin/webpack.js --progress --colors
-
-# watch:
-# 	./node_modules/webpack/bin/webpack.js --progress --colors
-
-# .PHONY: assets
+.PHONY: start lock build

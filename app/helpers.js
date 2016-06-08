@@ -1,45 +1,43 @@
-/* @flow */
+// @flow
 
-const highlightjs = require('highlight.js');
-var marked = require('marked');
-var querystring = require('querystring');
+import highlightjs from 'highlight.js';
+import marked from 'marked';
+import querystring from 'querystring';
 
 marked.setOptions({
-  highlight: function (code) {
-    return highlightjs.highlightAuto(code).value;
-  }
+  highlight: (code) => highlightjs.highlightAuto(code).value,
 });
 
-var helpers = function (params) {
+const helpers = (params: Object) => {
   return {
-    asset: function (logicalPath) {
-      var asset = params.environment.findAsset(logicalPath);
-      return '/assets/' + asset.digestPath;
+    asset: (logicalPath: string) => {
+      const asset = params.environment.findAsset(logicalPath);
+      return `/assets/${asset.digestPath}`;
     },
 
-    assetCoverPath: function (name) {
-      var filename = name.split(' ').map(function (word) { return word.toLowerCase(); }).join('_');
-      var path = '/images/path_covers/' + filename + '.png';
+    assetCoverPath: (name: string) => {
+      const filename = name.split(' ').map(word => word.toLowerCase()).join('_');
+      const path = `/images/path_covers/${filename}.png`;
       return path;
     },
 
+    marked,
     _: params._,
-    marked: marked,
 
-    hexletCourseLink: function (course) {
-      var params = {
+    hexletCourseLink: (course: string) => {
+      const params = {
         utm_source: 'progmap',
         utm_medium: 'web',
-        utm_campaign: 'progmap_course'
+        utm_campaign: 'progmap_course',
       };
-      var link = course + '?' + querystring.stringify(params);
+      const link = `${course}?${querystring.stringify(params)}`;
       return link;
     },
 
-    ozonPartnerLink: function (ozon_link) {
-      var link = ozon_link + '?partner=programming_map';
+    ozonPartnerLink: (ozonLink: string) => {
+      const link = `${ozonLink}?partner=programming_map`;
       return link;
-    }
+    },
   };
 };
 
