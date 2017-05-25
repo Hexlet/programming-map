@@ -29,13 +29,8 @@
     - name: java-build-systems
     - name: java-testing
 
--
-    - name: java-network
+    
     - name: http
 
 -
-    - name: java-basic-cs-applications
-
--
-    - name: continuous
-    - name: sql
+    - name: webservices

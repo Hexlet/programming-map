@@ -1,0 +1,9 @@
+name: Java для веб-сервисов
+headline: bytecode, compilers, vm, virtual machine
+description: |
+    Заключительный курс направления Java, в котором мы, наконец, создадим первый полноценный самодостаточный Web-сервис.
+goal: |
+    Получить опыт создания приложений, их развертывания, сопровождения и поддержки.
+courses:
+    - name: 'Java для веб-сервисов'
+      url: 'https://ru.hexlet.io/courses/java-webservices'
