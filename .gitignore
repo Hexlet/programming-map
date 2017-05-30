@@ -8,3 +8,4 @@ public/main.js
 public/assets
 app/cache
 .nodemon-find-ref
+tmp/*
