@@ -9,3 +9,4 @@ public/assets
 app/cache
 .nodemon-find-ref
 tmp/*
+*.retry

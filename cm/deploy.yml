@@ -23,9 +23,27 @@
 - hosts: webservers
   gather_facts: no
   tasks:
-    - shell: docker pull {{ docker_hub_repo }}:{{ programming_map_image_tag }}
-      become: yes
-      become_user: '{{ run_user }}'
+    - docker_container:
+        recreate: yes
+        name: map-nginx
+        image: nginx
+        state: started
+        restart_policy: always
+        network_mode: host
+        volumes:
+          - "/etc/nginx/conf.d:/etc/nginx/conf.d"
+          - "/etc/certs:/etc/certs"
+          - "/var/www/programming_map/shared/public:/var/www/programming_map/shared/public"
+      tags: [nginx]
+
+    - docker_container:
+        recreate: yes
+        name: programming-map
+        image: "{{ docker_hub_repo }}:{{ programming_map_image_tag  }}"
+        state: started
+        restart_policy: always
+        ports:
+          - "8080:8080"
 
     - name: update hexlet version
       become: yes
@@ -35,14 +53,6 @@
         dest: /etc/environment
         backup: yes
         state: present
-
-    - service: name=programming-map state=restarted
-      become: yes
-      tags: [app]
-
-    - service: name=nginx state=started
-      become: yes
-      tags: [app]
 
 - hosts: all
   gather_facts: no

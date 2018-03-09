@@ -1,5 +1,7 @@
-run_user: map_production
+run_user: hexlet_production
 server_name: map.hexlet.io
 server_host: 0.0.0.0
 server_port: 8080
 docker_hub_repo: "hexlet/programming-map-autobuild"
+ansible_python_interpreter: /usr/bin/env python3
+ansible_playbook_python: /usr/bin/env python3
